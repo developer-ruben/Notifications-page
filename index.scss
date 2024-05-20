@@ -1,0 +1,224 @@
+@mixin mobile {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+
+// VARIABLES
+
+:root {
+  --color-primary-red: hsl(1, 90%, 64%);
+  --color-primary-blue: hsl(219, 85%, 26%);
+  --color-neutral-white: hsl(0, 0%, 100%);
+  --color-neutral-very-light-grayish-blue: hsl(210, 60%, 98%);
+  --color-neutral-light-grayish-blue-1: hsl(211, 68%, 94%);
+  --color-neutral-light-grayish-blue-2: hsl(205, 33%, 90%);
+  --color-neutral-grayish-blue: hsl(219, 14%, 63%);
+  --color-neutral-dark-grayish-blue: hsl(219, 12%, 42%);
+  --color-neutral-very-dark-blue: hsl(224, 21%, 14%);
+  --font-family: "Plus Jakarta Sans", sans-serif;
+  --body-font-size: 1.6rem;
+  --header-font-size: 2.4rem;
+  @include mobile {
+    --header-font-size: 2rem;
+    --body-font-size: 1.4rem;
+  }
+}
+
+// RESET
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+// GENERAL STYLES
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.6rem;
+  background-color: var(--color-neutral-very-light-grayish-blue);
+  font-size: var(--body-font-size);
+  font-family: var(--font-family);
+  font-weight: 500;
+  @include mobile {
+    padding: 0;
+  }
+}
+
+// NOTIFICATION SECTION
+
+.notifications-section {
+  box-shadow: 0 20px 60px 0 hsl(225, 39%, 47%, 0.05);
+  max-width: 730px;
+  margin: 6.3rem 0 8.9rem 0;
+  padding: 3.3rem;
+  background-color: var(--color-neutral-white);
+  border-radius: 1.5rem;
+  @include mobile {
+    margin: 0;
+    padding: 2.4rem 1.6rem;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3.1rem;
+    @include mobile {
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    font-size: var(--header-font-size);
+  }
+
+  &__number {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 25px;
+    background-color: var(--color-primary-blue);
+    border-radius: 0.6rem;
+    font-size: var(--body-font-size);
+    font-weight: 700;
+    color: var(--color-neutral-white);
+    @include mobile {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__button {
+    transition: color 0.3s ease-in-out;
+    background-color: transparent;
+    border: 0;
+    font-weight: 500;
+    color: var(--color-neutral-dark-grayish-blue);
+    &:hover {
+      cursor: pointer;
+      color: var(--color-primary-blue);
+    }
+  }
+}
+
+.notifications {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  list-style-type: none;
+  .notification {
+    display: flex;
+    align-items: start;
+    gap: 1.9rem;
+    padding: 1.8rem 2rem;
+    transition: background-color 0.3s ease-in-out;
+    border-radius: 0.8rem;
+    color: var(--color-neutral-dark-grayish-blue);
+    @include mobile {
+      padding: 1.6rem;
+    }
+
+    &--new {
+      background-color: var(--color-neutral-very-light-grayish-blue);
+      .notification__text {
+        &::after {
+          content: "";
+          display: inline-block;
+          position: relative;
+          transform: translate(4px, -2px);
+          width: 8px;
+          height: 8px;
+          background-color: var(--color-primary-red);
+          border-radius: 5px;
+        }
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    &__link {
+      display: inline-block;
+      margin-left: 0.7rem;
+      font-weight: 700;
+      color: var(--color-neutral-dark-grayish-blue);
+      text-decoration: none;
+      &:hover {
+        color: var(--color-primary-blue);
+      }
+    }
+
+    &__name {
+      display: inline-block;
+      margin-right: 0.8rem;
+      color: var(--color-neutral-very-dark-blue);
+    }
+
+    &__time {
+      color: var(--color-neutral-grayish-blue);
+    }
+
+    &__subject {
+      display: inline-block;
+      margin-left: 0.4rem;
+      font-style: normal;
+      font-weight: bold;
+      color: var(--color-neutral-dark-grayish-blue);
+    }
+
+    &__message {
+      margin-top: 1rem;
+      padding: 2rem;
+      border: 1px solid var(--color-neutral-light-grayish-blue-2);
+      border-radius: 0.5rem;
+      &:hover {
+        background-color: var(--color-neutral-light-grayish-blue-1);
+        cursor: pointer;
+      }
+    }
+
+    &__image {
+      margin-left: auto;
+    }
+  }
+}
+
+// ATTRIBUTION
+
+.attribution {
+  position: fixed;
+  bottom: 0;
+  padding: 1;
+  background-color: var(--color-neutral-white);
+  font-size: 11px;
+  text-align: center;
+  &__link {
+    color: hsl(228, 45%, 44%);
+  }
+}
