@@ -23,12 +23,12 @@
           Notifications
           <span class="notifications__count" id="notification-counter">3</span>
         </h1>
-        <a class="notifications__read" href="#" id="mark-read"
-          >Mark all as read
-        </a>
+        <button class="notifications__read" id="mark-read">
+          Mark all as read
+        </button>
       </header>
-      <div class="notifications__list">
-        <div class="notification notification--unread">
+      <ul class="notifications__list">
+        <li class="notification notification--unread">
           <img
             class="notification__avatar"
             src="./assets/images/avatar-mark-webber.webp"
@@ -46,9 +46,9 @@
             </p>
             <span>1m ago</span>
           </div>
-        </div>
+        </li>
 
-        <div class="notification notification--unread">
+        <li class="notification notification--unread">
           <img
             class="notification__avatar"
             src="./assets/images/avatar-angela-gray.webp"
@@ -62,9 +62,9 @@
             </p>
             <span>5m ago</span>
           </div>
-        </div>
+        </li>
 
-        <div class="notification notification--unread">
+        <li class="notification notification--unread">
           <img
             class="notification__avatar"
             src="./assets/images/avatar-jacob-thompson.webp"
@@ -79,9 +79,9 @@
             </p>
             <span>1 day ago</span>
           </div>
-        </div>
+        </li>
 
-        <div class="notification">
+        <li class="notification">
           <img
             class="notification__avatar"
             src="./assets/images/avatar-jacob-thompson.webp"
@@ -101,9 +101,9 @@
               improving my game.
             </a>
           </div>
-        </div>
+        </li>
 
-        <div class="notification">
+        <li class="notification">
           <img
             class="notification__avatar"
             src="./assets/images/avatar-kimberly-smith.webp"
@@ -126,45 +126,45 @@
             height="45"
             alt="Someone playing chess"
           />
-        </div>
-      </div>
+        </li>
 
-      <div class="notification">
-        <img
-          class="notification__avatar"
-          src="./assets/images/avatar-nathan-peterson.webp"
-          width="45"
-          height="45"
-          alt="Portrait of Nathan Peterson"
-        />
-        <div class="notification__body">
-          <p class="notification__text">
-            <span class="notification__name">Nathan Peterson</span> reacted to
-            your recent post
-            <span class="notification__post"
-              >5 end-game strategies to increase your win rate</span
-            >
-          </p>
-          <span>2 weeks ago</span>
-        </div>
-      </div>
+        <li class="notification">
+          <img
+            class="notification__avatar"
+            src="./assets/images/avatar-nathan-peterson.webp"
+            width="45"
+            height="45"
+            alt="Portrait of Nathan Peterson"
+          />
+          <div class="notification__body">
+            <p class="notification__text">
+              <span class="notification__name">Nathan Peterson</span> reacted to
+              your recent post
+              <span class="notification__post"
+                >5 end-game strategies to increase your win rate</span
+              >
+            </p>
+            <span>2 weeks ago</span>
+          </div>
+        </li>
 
-      <div class="notification">
-        <img
-          class="notification__avatar"
-          src="./assets/images/avatar-anna-kim.webp"
-          width="45"
-          height="45"
-          alt="Portrait of Anna Kim"
-        />
-        <div class="notification__body">
-          <p class="notification__text">
-            <span class="notification__name">Anna Kim</span> left the group
-            <span class="notification__group">Chess Club</span>
-          </p>
-          <span>2 weeks ago</span>
-        </div>
-      </div>
+        <li class="notification">
+          <img
+            class="notification__avatar"
+            src="./assets/images/avatar-anna-kim.webp"
+            width="45"
+            height="45"
+            alt="Portrait of Anna Kim"
+          />
+          <div class="notification__body">
+            <p class="notification__text">
+              <span class="notification__name">Anna Kim</span> left the group
+              <span class="notification__group">Chess Club</span>
+            </p>
+            <span>2 weeks ago</span>
+          </div>
+        </li>
+      </ul>
     </main>
 
     <footer class="attribution">

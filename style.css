@@ -124,11 +124,14 @@ body {
 
 .notifications__read {
   transition: color 0.3s ease-in-out;
+  border: 0;
+  background-color: transparent;
   color: hsl(var(--clr-dark-grey-blue));
   text-decoration: none;
 }
 
 .notifications__read:hover {
+  cursor: pointer;
   color: hsl(var(--clr-blue));
 }
 
@@ -136,6 +139,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  list-style-type: none;
 }
 
 .notification {
